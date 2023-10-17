@@ -41,7 +41,12 @@ export function Login() {
     onSubmit: async (values, {setStatus, setSubmitting}) => {
       setLoading(true)
       try {
-        const {data: auth}: any = await login(values.id, values.username, values.password, values.rol)
+        const {data: auth}: any = await login(
+          values.id,
+          values.username,
+          values.password,
+          values.rol
+        )
         saveAuth(auth)
         setCurrentUser(auth)
       } catch (error) {
